@@ -1,6 +1,8 @@
 # Loan Management API
 
-An API which facilitates the working of a minimal loan management system
+An API which facilitates the working of a minimal loan management system\
+\
+[![Go](https://github.com/sriramsridhar/loan-management-system/actions/workflows/go.yml/badge.svg)](https://github.com/sriramsridhar/loan-management-system/actions/workflows/go.yml)
 
 ## API context
 
