@@ -44,7 +44,8 @@ func CreateLoan(c *gin.Context) {
 
 func GetLoans(c *gin.Context) {
 	user_id := getuserId(c)
-	loans, err := services.GetLoans(user_id)
+	user_role := c.MustGet("role").(string)
+	loans, err := services.GetLoans(user_id, user_role)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, models.InternalServerErrorResponse(err.Error()))
 		return
@@ -61,8 +62,8 @@ func GetLoanByID(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, models.BadRequestResponse("Invalid loan ID"))
 		return
 	}
-
-	loan, err := services.GetLoanByID(uint(loanID), user_id)
+	user_role := c.MustGet("role").(string)
+	loan, err := services.GetLoanByID(uint(loanID), user_id, user_role)
 	if err != nil {
 		c.JSON(http.StatusNotFound, models.NotFoundResponse("Loan not found"))
 		return

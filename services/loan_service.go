@@ -38,14 +38,22 @@ func CreateLoan(loanReq *models.LoanReq) (models.Loan, error) {
 	return loan, nil
 }
 
-func GetLoans(user_id uint) ([]models.Loan, error) {
+func GetLoans(user_id uint, user_role string) ([]models.Loan, error) {
 	var loans []models.Loan
+	if user_role == "admin" {
+		err := database.DB.Preload("Repayments").Find(&loans).Error
+		return loans, err
+	}
 	err := database.DB.Preload("Repayments").Where("customer_id = ?", user_id).Find(&loans).Error
 	return loans, err
 }
 
-func GetLoanByID(id uint, user_id uint) (models.Loan, error) {
+func GetLoanByID(id uint, user_id uint, user_role string) (models.Loan, error) {
 	var loan models.Loan
+	if user_role == "admin" {
+		err := database.DB.Preload("Repayments").First(&loan, id).Error
+		return loan, err
+	}
 	err := database.DB.Preload("Repayments").Where("customer_id = ?", user_id).First(&loan, id).Error
 	return loan, err
 }
