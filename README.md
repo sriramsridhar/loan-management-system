@@ -68,6 +68,11 @@ I've used air in my local environment for hot reloading. you can install it usin
     air init
     air 
 
+## Postman collection
+
+Public link : [here](https://elements.getpostman.com/redirect?entityId=1428222-ee995840-bab1-4e69-9544-57624c5e8ce2&entityType=collection)
+postman collection available at root directory under the name loan_management_system.postman_collection.json
+
 ## Metrics & health check
 
 - Health check exposed endpoint : <http://localhost:8080/health>
