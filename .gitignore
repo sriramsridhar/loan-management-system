@@ -6,6 +6,3 @@
 /bin/
 /pkg/
 /vendor/
-
-# Go dependency files
-go.sum
