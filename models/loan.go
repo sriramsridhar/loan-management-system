@@ -14,7 +14,6 @@ const (
 )
 
 const (
-	LoanStateActive    STATE = "active"
 	LoanStateApproved  STATE = "approved"
 	LoanStateRejected  STATE = "rejected"
 	LoanStateCompleted STATE = "completed"

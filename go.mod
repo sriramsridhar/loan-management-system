@@ -10,8 +10,6 @@ require (
 	github.com/stretchr/testify v1.9.0
 	github.com/zsais/go-gin-prometheus v0.1.0
 	golang.org/x/crypto v0.25.0
-	gorm.io/driver/sqlite v1.5.6
-	gorm.io/gorm v1.25.7-0.20240204074919-46816ad31dde
 )
 
 require (
